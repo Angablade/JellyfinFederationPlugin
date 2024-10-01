@@ -7,11 +7,15 @@ using MediaBrowser.Controller.Library;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using MediaBrowser.Common.Configuration;
+using System;
+using System.Globalization;
 
 public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
 {
     public override string Name => "Jellyfin Federation Plugin";
     public override string Description => "Enables federation across Jellyfin servers for streaming media without syncing files.";
+    public override Guid Id => new Guid("ab6fad0e-ffcb-469c-b1b0-b11f79ddf447");
+   
 
     public static Plugin Instance { get; private set; }
 
@@ -45,10 +49,12 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
 
     public IEnumerable<PluginPageInfo> GetPages()
     {
-        return new[] {
-            new PluginPageInfo {
-                Name = "JellyfinFederationPlugin",
-                EmbeddedResourcePath = "JellyfinFederationPlugin.Web.ConfigurationPage.html"
+        return new[]
+               {
+            new PluginPageInfo
+            {
+                Name = this.Name,
+                EmbeddedResourcePath = string.Format(CultureInfo.InvariantCulture, "{0}.Web.ConfigurationPage.html", GetType().Namespace)
             }
         };
     }

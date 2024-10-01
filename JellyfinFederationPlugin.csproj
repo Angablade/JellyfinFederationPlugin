@@ -7,11 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Web\ConfigurationPage.html" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Web\ConfigurationPage.html" />
+    <EmbeddedResource Include="Web\ConfigurationPage.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
