@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JellyfinFederationPlugin", "JellyfinFederationPlugin.csproj", "{8ACA5F2D-8FF6-444F-A6D0-3FDC400A23FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8ACA5F2D-8FF6-444F-A6D0-3FDC400A23FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ACA5F2D-8FF6-444F-A6D0-3FDC400A23FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ACA5F2D-8FF6-444F-A6D0-3FDC400A23FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ACA5F2D-8FF6-444F-A6D0-3FDC400A23FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5F6F29A-492E-4763-99E8-D1F62336E49A}
+	EndGlobalSection
+EndGlobal

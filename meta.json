@@ -1,0 +1,14 @@
+{
+  "category": "General",
+  "owner": "Angablade",
+  "name": "JellyfinFederationPlugin",
+  "version": "1.0.0",
+  "guid": "ab6fad0e-ffcb-469c-b1b0-b11f79ddf447",
+  "description": "Enables federation across Jellyfin servers for streaming media without syncing files.",
+  "plugin": "JellyfinFederationPlugin.Plugin, JellyfinFederationPlugin",
+  "configuration": {
+    "page": "JellyfinFederationPlugin"
+  },
+  "imagePath": "C:/ProgramData/Jellyfin/Server/plugins/JellyfinFederationPlugin/logo.png",
+  "status": "Active"  
+}

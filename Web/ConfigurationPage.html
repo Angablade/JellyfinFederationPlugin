@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jellyfin Federation Plugin</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h1>Federation Configuration</h1>
+    <div id="server-list">
+        <!-- Server input fields will be dynamically added here -->
+    </div>
+    <button id="add-server">Add Server</button>
+    <button id="save-config">Save Configuration</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var serverList = document.getElementById('server-list');
+            
+            document.getElementById('add-server').addEventListener('click', function () {
+                var serverEntry = document.createElement('div');
+                serverEntry.innerHTML = `
+                    <input type="text" placeholder="Server URL" class="server-url">
+                    <input type="text" placeholder="API Key" class="server-api-key">
+                    <input type="number" placeholder="Port" class="server-port">
+                    <button class="remove-server">Remove</button>
+                `;
+                serverList.appendChild(serverEntry);
+
+                serverEntry.querySelector('.remove-server').addEventListener('click', function () {
+                    serverEntry.remove();
+                });
+            });
+
+            document.getElementById('save-config').addEventListener('click', function () {
+                var servers = [];
+                serverList.querySelectorAll('div').forEach(function (serverDiv) {
+                    var url = serverDiv.querySelector('.server-url').value;
+                    var apiKey = serverDiv.querySelector('.server-api-key').value;
+                    var port = serverDiv.querySelector('.server-port').value;
+                    
+                    servers.push({ url: url, apiKey: apiKey, port: port });
+                });
+
+                fetch('/Plugins/JellyfinFederationPlugin/SaveConfiguration', {
+                    method: 'POST',
+                    body: JSON.stringify(servers),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
